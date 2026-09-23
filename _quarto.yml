@@ -4,7 +4,13 @@ project:
 
 website:
   title: "Kenneth Low"
-  site-url: https://kaxlow.github.io
+  site-url: https://kennethlow.com
+  description: "Kenneth Low’s data science portfolio: climate, migration, and machine learning."
+  page-footer:
+    left: "Kenneth Low · Data science & a healthy sense of curiosity"
+    right:
+      - text: GitHub
+        href: https://github.com/Kaxlow
 
   navbar:
     left:
@@ -18,6 +24,7 @@ website:
     right:
       - icon: github
         href: https://github.com/kaxlow
+        aria-label: Kenneth Low on GitHub
 
 format:
   html:

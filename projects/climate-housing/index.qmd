@@ -1,35 +1,56 @@
 ---
-title: "Are Climate Risks Priced Into Housing Markets?"
-subtitle: "Exploring climate exposure and U.S. housing markets"
-date: 2026-09-22
+title: "Climate risk & housing"
+subtitle: "Are climate risks priced into housing markets?"
+description: "A county-level exploration of climate risk, housing-market performance, and extreme weather events using Python, DuckDB, and D3."
 ---
 
-## The Question
+::: {.project-intro}
+Housing is local. So is exposure to extreme weather. This project brings those two stories together, exploring how U.S. county housing markets relate to climate risk and how their trajectories look around major events.
 
-Are housing markets already accounting for climate risk?
+[Explore the interactive story ↗](https://kennethlow.com/climate-on-housing/output/climate-risk-housing.html){.btn .btn-primary}
+[View code on GitHub ↗](https://github.com/Kaxlow/climate-on-housing){.btn .btn-outline-primary}
+:::
 
-## The Data
+## The question
 
-This analysis combines county-level data covering:
+Do counties with different climate-risk ratings show different housing-market patterns? And what can we learn by looking at the months before and after extreme weather events?
 
-- Housing markets
-- Climate risk
-- Demographics
-- Economic conditions
-- Migration
+The project focuses on Redfin’s median sale price per square foot, measured as year-over-year change. That gives the analysis a concrete housing outcome to compare across places and through time.
 
-## Analysis
+## From scattered sources to a shared geography
 
-Content goes here.
+The pipeline combines Redfin housing data, FEMA risk ratings and disaster declarations, NOAA storm events, NCEI weather, Census ACS characteristics, and StatsAmerica economic data. Five-character county FIPS codes connect the sources.
 
-## Findings
+Python handles acquisition and preparation. DuckDB separates raw records, normalized tables, domain features, and event-window analysis. Source metadata and file hashes make it possible to trace inputs through the pipeline.
 
-Content goes here.
+## What I built
 
-## Limitations
+- **A layered analytical database:** raw records remain separate from the tables used for comparisons and publication.
+- **Event-window analysis:** housing observations are aligned before event start and after event end, with distinct three- and five-year post-event views.
+- **An interactive story:** county geography, housing histories, risk-group comparisons, and a Climate Playbook are published as a static D3 experience.
+- **Supporting notebooks and methodology:** quality checks, feature exploration, and event diagnostics sit alongside the final story.
 
-Content goes here.
+## Explore the evidence
 
-## Repository
+Start with county housing histories, compare FEMA risk groups, then examine the event-relative views. The feature analysis asks which economic and demographic characteristics accompany stronger or weaker housing growth within the same risk group.
 
-[View the project on GitHub](https://github.com/kaxlow/climate-on-housing)
+These views answer different questions and can use different cohorts. The grouped event charts require complete observations across their displayed windows; a five-year view can therefore contain fewer trajectories than a three-year view.
+
+::: {.callout-note}
+## What this analysis does not establish
+
+The comparisons describe associations, not causal effects of climate risk on prices. County summaries hide neighborhood differences; event windows may overlap; and today’s FEMA risk snapshot is applied to historical periods. The Climate Playbook’s combined score is a rule-based presentation heuristic, not a validated prediction or calibrated risk estimate.
+:::
+
+## Why this project belongs here
+
+It connects the engineering work behind an analysis with the experience of exploring it. The database, geography, cohort definitions, and storytelling all have to agree for the final page to be useful.
+
+## Explore further
+
+- [Interactive story](https://kennethlow.com/climate-on-housing/output/climate-risk-housing.html)
+- [Source code and reproduction instructions](https://github.com/Kaxlow/climate-on-housing)
+- [Detailed methodology and limitations](https://github.com/Kaxlow/climate-on-housing/blob/main/docs/climate-risk-housing-methodology.md)
+- [Publication notebooks](https://github.com/Kaxlow/climate-on-housing/tree/main/notebooks)
+
+[Next: Patterns of U.S. migration →](../us-migration/index.qmd){.text-link}

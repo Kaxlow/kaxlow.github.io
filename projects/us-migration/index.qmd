@@ -1,0 +1,59 @@
+---
+title: "Patterns of U.S. migration"
+subtitle: "Do county characteristics explain migration flows?"
+description: "Exploring U.S. migration through county characteristics, public-data cleaning, interactive maps, and reproducible exploratory analysis."
+---
+
+::: {.project-intro}
+People move for many reasons. This project asks which characteristics of a place are associated with those movements—and starts by making the underlying public datasets comparable enough to investigate.
+
+[Explore the research website ↗](https://kennethlow.com/us-migration/){.btn .btn-primary}
+[View code on GitHub ↗](https://github.com/Kaxlow/us-migration){.btn .btn-outline-primary}
+:::
+
+## The question
+
+How do migration patterns relate to housing, demographics, economic conditions, and climate across U.S. counties?
+
+The current work is descriptive and exploratory. It brings together IRS migration records, Census ACS characteristics and migration flows, FEMA declarations, and NOAA climate observations, with source coverage beginning in 2009.
+
+## The work behind the maps
+
+Public data changes shape over time. The pipeline handles legacy IRS spreadsheets, different text encodings, missing-value markers, geographic code changes, and differing source coverage.
+
+Raw snapshots are preserved with checksums. Cleaned tables are kept separate, and the analysis records exclusions and provenance. Climate annual summaries require all 12 months; duplicate migration records are checked before canonical county-pair tables are produced.
+
+The September 21, 2026 analysis report documents a descriptive panel of **49,717 county-year rows across 2009–2024**, containing 3,109 distinct native county codes. These codes include geographic changes over time; they do not represent a fixed, harmonized geography.
+
+## A first finding
+
+In the latest-year validated county cross section, homeownership had the largest absolute Spearman association among the reported leading variables with net IRS individuals per 1,000 ACS residents: **0.290**, with **3,050 paired observations**. Median age and median home value followed at 0.252 and 0.238.
+
+That is a starting point for investigation, not an explanation of why a particular household moves. The comparison uses training-imputed socioeconomic predictors and measures an aggregate association. [Read the source report](https://github.com/Kaxlow/us-migration/blob/main/reports/eda_summary.md).
+
+## What you can explore
+
+- **Interactive county maps** to inspect the geography of migration and county characteristics.
+- **Data-preparation examples** showing the steps between raw source files and analytical tables.
+- **Ten exploratory charts** with captions and supporting findings.
+- **Executed notebooks** covering cleaning, data quality, distributions, and correlations.
+
+::: {.callout-note}
+## Boundaries of the evidence
+
+IRS and ACS measure different populations and periods. Overlapping ACS windows, nominal dollar measures, changing county boundaries, and IRS series breaks complicate comparisons. The descriptive panel is neither geographically harmonized nor ready for forecasting without additional work to ensure only information available at prediction time is used. The associations do not establish causation.
+:::
+
+## Why this project belongs here
+
+The map is the visible part. The less visible work—preserving raw data, resolving definitions, auditing duplicates, and documenting what gets excluded—is what makes the map worth reading.
+
+## Explore further
+
+- [Interactive research website](https://kennethlow.com/us-migration/)
+- [Source code and workflow](https://github.com/Kaxlow/us-migration)
+- [EDA findings and reported figures](https://github.com/Kaxlow/us-migration/blob/main/reports/eda_summary.md)
+- [Methodology](https://github.com/Kaxlow/us-migration/blob/main/docs/methodology.md)
+- [Executed notebooks](https://github.com/Kaxlow/us-migration/tree/main/notebooks)
+
+[Next: Neural recommender systems →](../rec-sys-nn-optimization/index.qmd){.text-link}

@@ -1,14 +1,18 @@
 ---
 title: "Projects"
+subtitle: "Questions first. Data, methods, and a story to follow."
+page-layout: full
+toc: false
 ---
 
-Things I've investigated, modeled, and built.
+These projects cover two sides of my work: using public data to explore real-world systems, and designing experiments to understand how machine-learning methods behave. Each case study links to the code and research behind it.
 
-## Climate × Housing
+{{< include ../_project-cards.qmd >}}
 
-**Are Climate Risks Priced Into Housing Markets?**
+::: {.personal-strip}
+## From source data to something you can explore.
 
-An analysis of how climate exposure relates to housing-market
-behavior across U.S. counties.
+The interesting part rarely starts with a clean table. Across these projects, the work includes reconciling sources, checking geography and time, making comparisons fair, and explaining what the evidence can—and cannot—tell us.
 
-[Read the case study](climate-housing/)
+[More work on GitHub ↗](https://github.com/Kaxlow){.text-link}
+:::

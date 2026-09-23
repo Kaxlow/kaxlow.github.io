@@ -1,17 +1,40 @@
 ---
-title: "Resume"
+title: "Background & experience"
+subtitle: "Enterprise software experience. A growing body of data science research."
+toc: false
 ---
-
-[Download PDF](assets/resume/Kenneth-Low-Resume.pdf)
-
-## Experience
-
-...
 
 ## Education
 
-...
+**M.S. in Data Science — University of Colorado Boulder**
+In progress
 
-## Skills
+## Professional background
 
-...
+Several years of experience working with enterprise software and solving complex technical problems, followed by a transition into data science.
+
+## Selected project experience
+
+### Climate risk & housing
+
+An end-to-end public-data pipeline using Python and DuckDB, with county-level housing histories, disaster event windows, documented methodology, and an interactive D3 story.
+
+[View the project →](projects/climate-housing/index.qmd)
+
+### U.S. migration
+
+Acquisition, cleaning, and exploratory analysis of IRS, ACS, FEMA, and NOAA data, supported by provenance records, executed notebooks, and an interactive research website.
+
+[View the project →](projects/us-migration/index.qmd)
+
+### Neural recommender systems
+
+Independent study comparing six neural model families, three hyperparameter-search methods, and four optimizer families. Includes repeated-seed GPU experiments and an unpublished draft manuscript.
+
+[View the project →](projects/rec-sys-nn-optimization/index.qmd)
+
+## Tools in this work
+
+Python · SQL / DuckDB · PyTorch · Jupyter · D3 · Git / GitHub · Quarto
+
+[Browse my work on GitHub ↗](https://github.com/Kaxlow){.btn .btn-primary}

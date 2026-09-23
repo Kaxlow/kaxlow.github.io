@@ -1,13 +1,35 @@
 ---
 title: "Kenneth Low"
+pagetitle: "Kenneth Low — Data science, with curiosity"
 page-layout: full
+toc: false
 ---
 
-# Hi, I'm Kenneth.
+```{=html}
+<section class="portfolio-hero" aria-labelledby="hello">
+<div class="hero-copy"><p class="eyebrow">Kenneth Low / Data science portfolio</p>
+<h1 id="hello">Messy world.<br>Good questions.<br><em>Let’s explore.</em></h1>
+<p class="hero-lead">I’m Kenneth, a data scientist drawn to the places, people, and systems behind the numbers.</p>
+<p>From climate risk and housing to migration and machine learning, I turn complicated data into something you can investigate.</p>
+<div class="action-row"><a class="btn btn-primary" href="projects/">Explore my projects ↗</a><a class="text-link" href="about.html">A little about me →</a></div>
+<p class="hero-note">M.S. in Data Science, in progress · CU Boulder</p></div>
+<aside class="field-card" aria-label="The questions behind my work">
+<div class="contour-art" aria-hidden="true"><span>KL / FIELD NOTES</span><svg viewBox="0 0 400 240" fill="none"><g stroke="currentColor" stroke-width="1.3"><path d="M-30 180C70 280 100 40 220 110S360 270 440 90"/><path d="M-30 160C70 260 100 20 220 90S360 250 440 70"/><path d="M-30 140C70 240 100 0 220 70S360 230 440 50"/><path d="M-30 120C70 220 100-20 220 50S360 210 440 30"/><path d="M-30 100C70 200 100-40 220 30S360 190 440 10"/><path d="M-30 200C70 300 100 60 220 130S360 290 440 110"/><path d="M-30 220C70 320 100 80 220 150S360 310 440 130"/></g><circle cx="207" cy="86" r="6" fill="currentColor"/></svg></div>
+<p class="eyebrow">Currently investigating</p><ol class="question-list"><li><span>01</span>How does climate risk meet the housing market?</li><li><span>02</span>What’s associated with where people move?</li><li><span>03</span>When does a more complex model earn its keep?</li></ol><p class="field-caption">Follow the question. Check the assumptions.</p></aside>
+</section>
+<section class="section-heading"><p class="eyebrow">Selected work / 01—03</p><h2>Three questions worth digging into.</h2><p>Interactive research, reproducible pipelines, and experiments with the details left in.</p></section>
+```
 
-I use data to understand messy real-world systems.
+{{< include _project-cards.qmd >}}
 
-I'm a data scientist currently completing an M.S. in Data Science
-at the University of Colorado Boulder.
+::: {.personal-strip}
+::: {.eyebrow}
+Away from the keyboard
+:::
 
-[Explore my work](projects/)
+## A few other kinds of exploration.
+
+Running a D&D campaign. Finding a trail. Working out a guitar part. Trying something new in the kitchen. Different settings, same curiosity.
+
+[Meet the person behind the projects →](about.qmd){.text-link}
+:::

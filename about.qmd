@@ -1,19 +1,36 @@
 ---
-title: "About"
+title: "Hi, I’m Kenneth."
+subtitle: "Data scientist. Curious human. Occasional dungeon master."
+toc: false
 ---
 
-# Hi, I'm Kenneth.
+I’m currently completing an M.S. in Data Science at the University of Colorado Boulder. Before moving into data science, I spent several years working with enterprise software and solving complex technical problems.
 
-I'm a data scientist currently completing my M.S. in Data Science
-at CU Boulder.
+That background shows up in my projects: there’s the question I want to answer, and then there’s the work of making the data and tools reliable enough to answer it. I’m interested in both.
 
-Before moving into data science, I spent several years working
-with enterprise software and solving complex technical problems.
+## The questions I keep coming back to
 
-...
+How do places change? What shapes the way people move through them? And when we build models of those systems, how do we know the extra complexity is helping?
+
+My current projects explore [climate risk and housing](projects/climate-housing/index.qmd), [U.S. migration](projects/us-migration/index.qmd), and [neural recommender systems](projects/rec-sys-nn-optimization/index.qmd). They range from public-data pipelines and interactive maps to controlled machine-learning experiments.
+
+::: {.personal-strip}
+::: {.eyebrow}
+The rest of the character sheet
+:::
 
 ## Away from the keyboard
 
-When I'm not working with data, you'll probably find me running
-Dungeons & Dragons, hiking, playing guitar, or experimenting
-in the kitchen.
+- **At the table:** running Dungeons & Dragons, where the plan rarely survives contact with the party.
+- **On the trail:** hiking and making room for a different kind of perspective.
+- **With a guitar:** working through a part, one repetition at a time.
+- **In the kitchen:** experimenting with something new—and getting a much faster result than a research project.
+
+Different ways to spend an afternoon. Plenty of reasons to stay curious.
+:::
+
+## Follow the work
+
+Explore the finished stories here and follow the code, notebooks, and ongoing work on [GitHub](https://github.com/Kaxlow).
+
+[Explore my projects →](projects/index.qmd){.btn .btn-primary}

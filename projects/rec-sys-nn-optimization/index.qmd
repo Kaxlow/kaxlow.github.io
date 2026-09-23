@@ -1,0 +1,59 @@
+---
+title: "Neural recommender systems"
+subtitle: "When does a more complex model earn its keep?"
+description: "An independent study of neural recommender architectures, hyperparameter search, and optimization under a common computational budget."
+---
+
+::: {.project-intro}
+More elaborate models bring more moving parts. This independent study asks whether that complexity improves recommendation-style edge prediction when architectures, search methods, and optimizers operate under a shared, lightweight training budget.
+
+[Explore the repository ↗](https://github.com/Kaxlow/rec-sys-nn-optimization){.btn .btn-primary}
+[Read the draft manuscript ↗](https://github.com/Kaxlow/rec-sys-nn-optimization/tree/main/paper){.btn .btn-outline-primary}
+:::
+
+## Three comparisons
+
+1. **Architecture:** six model families spanning embedding, graph, sequential, relational-feature, and policy-guided approaches.
+2. **Hyperparameter search:** grid, random, and Differential Evolution-style search, each with 24 candidate evaluations over the same search domain.
+3. **Optimization:** Adam and momentum SGD compared with particle swarm and evolution-strategy-style methods.
+
+The experiments use MovieLens 100K and ogbl-collab. MovieLens becomes a user–item graph of positive interactions; ogbl-collab supplies an author-collaboration graph as a larger link-prediction proxy.
+
+## Making the comparison meaningful
+
+Each method uses the same five trial seeds. Hyperparameters are selected by mean validation AUC, then the selected configuration is retrained and evaluated on the test split. Candidate-search rows contain no test results, keeping the test set out of model selection.
+
+Alongside ROC AUC and average precision, the harness records time and resource use. The aim is to compare predictive performance with the computational cost of obtaining it.
+
+## What the full-data run found
+
+The August 25, 2026 full-data run used one NVIDIA RTX PRO 6000 GPU. These are mean test ROC AUC values ± sample standard deviation over five seeds, as [reported in the repository](https://github.com/Kaxlow/rec-sys-nn-optimization#current-repeated-trial-results).
+
+| Comparison | MovieLens 100K | ogbl-collab |
+|:--|:--|:--|
+| Highest mean AUC, model families | DNN: **0.4627 ± 0.0096** | PSL-DNN: **0.9477 ± 0.0015** |
+| Highest mean AUC, search methods | Grid: **0.6562 ± 0.0183** | DE-style: **0.9178 ± 0.0051** |
+| Highest mean AUC, optimizers | PSO: **0.5107 ± 0.0288** | Adam: **0.8650 ± 0.0243** |
+
+These are separate experiment suites, not one combined leaderboard. The weak MovieLens model-family results are part of the story: the strongest default family in that comparison still scored below 0.5 AUC. Tuning results were better, but the three MovieLens search methods remained close, from 0.6528 to 0.6562.
+
+On ogbl-collab, DE-style search had the highest mean test AUC, while grid search had the lowest measured candidate-search time. A single “best method” label would lose that tradeoff. These are descriptive comparisons, not formal significance tests.
+
+## What I built
+
+A shared PyTorch experiment harness, repeatable dataset preparation and negative sampling, validation-only hyperparameter selection, resource measurements, and separate result files for CPU quick-mode and full-data GPU runs. The repository also includes tests, an execution notebook, a GPU batch script, and the manuscript.
+
+::: {.callout-note}
+## Scope matters
+
+The manuscript is an unpublished working draft that has not been formally peer reviewed. Hybrid models are compact research approximations rather than full reproductions of the architectures that inspired them. Unobserved pairs are not proven dislikes; collaboration edges are not production recommendations. Full-data mode still uses short training schedules and sampled mini-batches. Ranking metrics such as NDCG@K and Recall@K remain future work.
+:::
+
+## Explore further
+
+- [Repository, protocol, and interpretation](https://github.com/Kaxlow/rec-sys-nn-optimization)
+- [Draft manuscript and publication status](https://github.com/Kaxlow/rec-sys-nn-optimization/tree/main/paper)
+- [Primary full-data GPU results](https://github.com/Kaxlow/rec-sys-nn-optimization/tree/main/results/full_rtx_pro_6000)
+- [Experiment notebook](https://github.com/Kaxlow/rec-sys-nn-optimization/blob/main/src/recommender_optimization_experiments.ipynb)
+
+[Back to all projects →](../index.qmd){.text-link}
