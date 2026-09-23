@@ -1,0 +1,13 @@
+---
+title: "Kenneth Low"
+page-layout: full
+---
+
+# Hi, I'm Kenneth.
+
+I use data to understand messy real-world systems.
+
+I'm a data scientist currently completing an M.S. in Data Science
+at the University of Colorado Boulder.
+
+[Explore my work](projects/)

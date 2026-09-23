@@ -1,0 +1,35 @@
+---
+title: "Are Climate Risks Priced Into Housing Markets?"
+subtitle: "Exploring climate exposure and U.S. housing markets"
+date: 2026-09-22
+---
+
+## The Question
+
+Are housing markets already accounting for climate risk?
+
+## The Data
+
+This analysis combines county-level data covering:
+
+- Housing markets
+- Climate risk
+- Demographics
+- Economic conditions
+- Migration
+
+## Analysis
+
+Content goes here.
+
+## Findings
+
+Content goes here.
+
+## Limitations
+
+Content goes here.
+
+## Repository
+
+[View the project on GitHub](https://github.com/kaxlow/climate-on-housing)

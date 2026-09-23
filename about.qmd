@@ -1,0 +1,19 @@
+---
+title: "About"
+---
+
+# Hi, I'm Kenneth.
+
+I'm a data scientist currently completing my M.S. in Data Science
+at CU Boulder.
+
+Before moving into data science, I spent several years working
+with enterprise software and solving complex technical problems.
+
+...
+
+## Away from the keyboard
+
+When I'm not working with data, you'll probably find me running
+Dungeons & Dragons, hiking, playing guitar, or experimenting
+in the kitchen.

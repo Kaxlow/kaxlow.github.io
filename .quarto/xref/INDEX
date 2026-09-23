@@ -1,0 +1,17 @@
+{
+  "about.qmd": {
+    "about.html": "2a8178bb"
+  },
+  "index.qmd": {
+    "index.html": "034b6e7f"
+  },
+  "projects/climate-housing/index.qmd": {
+    "index.html": "2b1da9a6"
+  },
+  "projects/index.qmd": {
+    "index.html": "410bd9d4"
+  },
+  "resume.qmd": {
+    "resume.html": "b3b220ea"
+  }
+}

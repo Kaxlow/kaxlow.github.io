@@ -1,0 +1,14 @@
+---
+title: "Projects"
+---
+
+Things I've investigated, modeled, and built.
+
+## Climate × Housing
+
+**Are Climate Risks Priced Into Housing Markets?**
+
+An analysis of how climate exposure relates to housing-market
+behavior across U.S. counties.
+
+[Read the case study](climate-housing/)
