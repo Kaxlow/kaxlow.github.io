@@ -15,4 +15,10 @@ body:has(.portfolio-hero) #title-block-header{display:none}.portfolio-hero{displ
 @media(min-width:992px){.page-layout-full .content{max-width:1160px;margin-left:auto;margin-right:auto;width:100%}}
 @media(max-width:991px){.portfolio-hero{gap:2rem;grid-template-columns:1.1fr 1fr}.project-grid{gap:1rem}.card-body{padding:1.1rem}.card-body h3{font-size:1.4rem}}
 @media(max-width:767px){.portfolio-hero{grid-template-columns:1fr;padding:2rem 0 3rem;gap:2.5rem}.portfolio-hero h1{font-size:3.4rem}.field-card{transform:none;max-width:32rem;box-shadow:5px 5px 0 #e8e3d7}.project-grid{grid-template-columns:1fr}.card-art{height:190px}.card-body{padding:1.5rem}.card-body h3{font-size:1.8rem}.card-body>.eyebrow{min-height:0}h2{font-size:1.8rem}.navbar{padding:.6rem 0}.personal-strip{padding:2rem 0}.action-row{gap:1rem}}
+/* Quarto applies its page-column grid to sections and places asides in the margin.
+   Keep the homepage composition inside its own responsive grid instead. */
+main .portfolio-hero{grid-column:page-start / page-end!important;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr)!important}
+main .portfolio-hero>.hero-copy,main .portfolio-hero>.field-card{grid-column:auto!important;grid-row:auto!important;width:auto;min-width:0}
+main .section-heading{display:block!important;grid-column:page-start / page-end!important}
+@media(max-width:767px){main .portfolio-hero{grid-template-columns:minmax(0,1fr)!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{transition:none!important;animation:none!important}}
