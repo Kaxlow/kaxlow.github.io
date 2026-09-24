@@ -1,0 +1,13 @@
+---
+title: "Privacy & analytics"
+---
+
+This portfolio and its climate and migration project websites use PostHog to understand which pages and features are useful and to diagnose errors. Once enabled, analytics includes page visits, clicks, scrolling, browser performance, browser errors, console logs, and session replay of page interactions.
+
+Session replay masks form input values. Network request and response bodies and headers are not recorded. Please avoid entering personal or sensitive information in these public project tools. Browser analytics cannot capture every issue, particularly when tracking is blocked or a page cannot load.
+
+You can disable analytics for these sites in this browser. The sites also honor Do Not Track and Global Privacy Control. Clearing browser storage resets your saved choice.
+
+```{=html}
+<p><button type="button" onclick="window.portfolioTelemetry?.setEnabled(false)">Disable analytics</button> <button type="button" onclick="window.portfolioTelemetry?.setEnabled(true)">Enable analytics</button></p>
+```

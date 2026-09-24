@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - analytics/posthog.js
 
 website:
   title: "Kenneth Low"
@@ -9,6 +11,8 @@ website:
   page-footer:
     left: "Kenneth Low · Data science & a healthy sense of curiosity"
     right:
+      - text: Privacy
+        href: privacy.qmd
       - text: GitHub
         href: https://github.com/Kaxlow
 
@@ -31,3 +35,4 @@ format:
     theme: cosmo
     css: portfolio.css
     toc: true
+    include-in-header: analytics/head.html

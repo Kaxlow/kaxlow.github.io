@@ -25,7 +25,11 @@ Build the static site with `quarto render`. Generated output goes to `_site/`; i
 
 To add a project, create its case study under `projects/`, add a card to `_project-cards.qmd`, and render to check its links. Use the project repository as the source of truth for methods and results. Date numerical results when they describe a specific run or data snapshot.
 
-## Publishing
+## Analytics and error reporting
+
+PostHog integration and activation instructions are in [analytics/README.md](analytics/README.md). The public project token must be configured before collection begins. All three sites use the shared `analytics/posthog.js` script.
+
+## Publishing the site
 
 Push source changes to `main`. `.github/workflows/publish.yml` renders Quarto, uploads `_site/`, and deploys through GitHub Pages. The repository Pages source must remain **GitHub Actions**. The custom domain is managed in GitHub Pages settings.
 
