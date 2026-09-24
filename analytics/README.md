@@ -1,6 +1,6 @@
 # PostHog setup and operations
 
-US Cloud project: `627070`. Its public token is configured in the shared script. Collection requires deployment and live verification.
+US Cloud project: `627070` (the account's Default project; no additional project required). Its public token is configured in the shared script. Deployed to all three sites on 2026-09-24. Verified pageviews, clicks, chapter changes, web vitals, and available session recordings in PostHog with the same anonymous visitor across sites. Replay, console capture, network timing, and exception autocapture are enabled in project settings. No real exception was deliberately triggered during the live smoke check.
 
 ## Activate
 

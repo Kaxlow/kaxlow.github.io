@@ -51,3 +51,12 @@ test('opt-out and opt-in update the same browser preference', () => {
   ctx.window.portfolioTelemetry.setEnabled(true);
   assert.equal(ctx.storage.get('portfolio-analytics-disabled'), 'false');
 });
+test('chapter anchors do not inflate project transitions or chapter views', () => {
+  const ctx = boot({ path: '/us-migration/' });
+  ctx.listeners.click({ target: { closest: () => ({ href: 'https://kennethlow.com/us-migration/#pca' }) } });
+  assert.equal(ctx.window.posthog.length, 0);
+  ctx.location.hash = '#pca'; ctx.listeners.hashchange();
+  ctx.location.hash = '#pca/section-data'; ctx.listeners.hashchange();
+  assert.equal(ctx.window.posthog.length, 1);
+  assert.equal(ctx.window.posthog[0][1], 'chapter_viewed');
+});

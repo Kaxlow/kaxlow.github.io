@@ -6,8 +6,9 @@
   const allowedHosts = ['kennethlow.com', 'www.kennethlow.com'];
   if (!allowedHosts.includes(location.hostname) || window.portfolioTelemetry) return;
 
-  const site = location.pathname.startsWith('/climate-on-housing/') ? 'climate-on-housing'
-    : location.pathname.startsWith('/us-migration/') ? 'us-migration' : 'portfolio';
+  const siteForPath = path => /^\/climate-on-housing(?:\/|$)/.test(path) ? 'climate-on-housing'
+    : /^\/us-migration(?:\/|$)/.test(path) ? 'us-migration' : 'portfolio';
+  const site = siteForPath(location.pathname);
   let disabled = navigator.doNotTrack === '1' || navigator.globalPrivacyControl === true;
   try { disabled ||= localStorage.getItem('portfolio-analytics-disabled') === 'true'; } catch (_) {}
   window.portfolioTelemetry = {
@@ -62,15 +63,17 @@
     if (!link) return;
     const url = new URL(link.href, location.href);
     if (!['https:', 'http:'].includes(url.protocol)) return;
-    if (url.origin !== location.origin || /^\/(climate-on-housing|us-migration)\//.test(url.pathname)) {
+    if (url.origin !== location.origin || siteForPath(url.pathname) !== site) {
       window.posthog.capture('project_link_clicked', { destination_url: cleanUrl(url.href), source_path: location.pathname });
     }
   });
   // Hash routing drives chapters in the migration atlas; do not send arbitrary hash contents.
+  let previousChapter = location.hash.slice(1).split('/')[0] || 'introduction';
   window.addEventListener('hashchange', () => {
     const chapter = location.hash.slice(1).split('/')[0];
-    if (site === 'us-migration' && /^[a-z][a-z-]{0,60}$/.test(chapter)) {
+    if (site === 'us-migration' && chapter !== previousChapter && /^[a-z][a-z-]{0,60}$/.test(chapter)) {
       window.posthog.capture('chapter_viewed', { chapter });
+      previousChapter = chapter;
     }
   });
   // Resource failures are not JavaScript exceptions (e.g. broken scripts/images).
