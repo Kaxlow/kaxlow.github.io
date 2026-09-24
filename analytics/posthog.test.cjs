@@ -24,9 +24,10 @@ test('one shared project labels each site and removes query/hash from page URLs'
     const ctx = boot({ path });
     assert.equal(ctx.inserted[0].src, 'https://us-assets.i.posthog.com/static/array.js');
     const options = ctx.window.posthog._i[0][1];
-    const event = options.before_send({ properties: { $current_url: 'https://kennethlow.com/?q=private#private' } });
+    const event = options.before_send({ properties: { $current_url: 'https://kennethlow.com/?q=private#private', $referrer: '$direct' } });
     assert.equal(event.properties.site, site);
     assert.equal(event.properties.$current_url, 'https://kennethlow.com/');
+    assert.equal(event.properties.$referrer, '$direct');
     assert.equal(options.session_recording.maskAllInputs, true);
     assert.equal(options.session_recording.recordBody, false);
     assert.equal(options.capture_exceptions.capture_console_errors, true);
