@@ -12,7 +12,7 @@ These projects cover two sides of my work: using public data to explore real-wor
 ::: {.personal-strip}
 ## From source data to something you can explore.
 
-The interesting part rarely starts with a clean table. Across these projects, the work includes reconciling sources, checking geography and time, making comparisons fair, and explaining what the evidence can—and cannot—tell us.
+The interesting part rarely starts with a clean table. Across these projects, the work includes reconciling sources, checking geography and time, making comparisons fair, and explaining what the evidence can - and cannot - tell us.
 
 [More work on GitHub ↗](https://github.com/Kaxlow){.text-link}
 :::

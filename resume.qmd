@@ -1,40 +1,81 @@
 ---
 title: "Background & experience"
-subtitle: "Enterprise software experience. A growing body of data science research."
-toc: false
+subtitle: "Kenneth (Ken) Low · Data science, machine learning, and enterprise software."
+toc: true
 ---
+
+[Email](mailto:Ken.Low@colorado.edu) · [LinkedIn](https://www.linkedin.com/in/kenneth--low-/) · [GitHub](https://github.com/Kaxlow)
+
+## Professional summary
+
+Data science professional and M.S. Data Science candidate with a 4.0 GPA and hands-on experience designing ML experiments, building large-scale analytics pipelines, and delivering data-driven products. Experienced in machine learning, statistical modeling, Python, PyTorch, and SQL, backed by 4+ years of professional experience troubleshooting production data systems, enterprise software, and complex technical workflows.
 
 ## Education
 
-**M.S. in Data Science — University of Colorado Boulder**
-In progress
+### University of Colorado Boulder
 
-## Professional background
+**Master of Science, Data Science**\
+April 2027 (expected) · GPA: 4.00/4.00
 
-Several years of experience working with enterprise software and solving complex technical problems, followed by a transition into data science.
+**Relevant coursework**
 
-## Selected project experience
+- **Independent Study - Neural Architectures and Recommender Systems:** Designed and built an experiment framework in PyTorch to benchmark neural recommender system architectures on the MovieLens 100K and ogbl-collab datasets, evaluating trade-offs in model performance, optimization methods, and training efficiency. Concluded that simpler embedding-based models and explicit relational features outperform more complex hybrid variants under a limited training budget. [Explore the study →](projects/rec-sys-nn-optimization/index.qmd)
+- **Data Structures and Algorithms:** Developed programs in Python that performed text analysis with NLTK, calculated shortest travel routes on a map using Dijkstra's Algorithm, and simulated a colony of autonomous robots on a grid map, achieving over 90% of the total score.
+- **R Programming and Tidyverse:** Analyzed and visualized U.S. and international COVID-19 data in R, using Tidyverse packages to clean and transform data and ggplot2 to create charts communicating findings. Authored an R Markdown report exploring differences in the pandemic's impact across places and times.
 
-### Climate risk & housing
+### National University of Singapore
 
-An end-to-end public-data pipeline using Python and DuckDB, with county-level housing histories, disaster event windows, documented methodology, and an interactive D3 story.
+**Bachelor of Business Administration, Accountancy**\
+May 2018 · Specialization: Finance · GPA: 4.57/5.00
 
-[View the project →](projects/climate-housing/index.qmd)
+## Skills
 
-### U.S. migration
+- **Programming:** Python, SQL, R, JavaScript, Bash, PowerShell
+- **Machine learning:** PyTorch, scikit-learn, Deep Neural Networks, Graph Neural Networks, Hyperparameter Tuning, Optimization
+- **Data & analytics:** Pandas, NumPy, DuckDB, Alteryx, Tidyverse, ggplot2, Seaborn, Jupyter
+- **Tools:** Git, REST APIs, HTML, CSS
 
-Acquisition, cleaning, and exploratory analysis of IRS, ACS, FEMA, and NOAA data, supported by provenance records, executed notebooks, and an interactive research website.
+## Experience
 
-[View the project →](projects/us-migration/index.qmd)
+### Quoll Intelligence
 
-### Neural recommender systems
+**Data Science Intern**\
+Boulder, CO, USA · June 2026 - August 2026
 
-Independent study comparing six neural model families, three hyperparameter-search methods, and four optimizer families. Includes repeated-seed GPU experiments and an unpublished draft manuscript.
+**Project: [Are Climate Risks Priced into Housing Markets?](projects/climate-housing/index.qmd)**
 
-[View the project →](projects/rec-sys-nn-optimization/index.qmd)
+- Built a county-level DuckDB analytics pipeline in Python and SQL integrating 1.3M+ monthly housing records with 660K+ FEMA/NOAA disaster records across 3,000+ U.S. counties, creating normalized data marts for housing, climate risk, demographic, economic, and migration analysis.
+- Developed event-window analyses aligning county housing-price histories from 12 months before climate events through post-event periods, comparing market behavior across FEMA risk groups and producing reusable analysis datasets and diagnostics for the infographic.
+- Built and published an interactive infographic in HTML, CSS, and JavaScript combining geospatial county maps, climate-event exposure, FEMA risk ratings, and local housing-market trends into an accessible data story for homeowners and housing stakeholders, recognized by founders as groundbreaking work at the intersection of climate and real estate.
 
-## Tools in this work
+### Alteryx - Senior Customer Support Engineer
 
-Python · SQL / DuckDB · PyTorch · Jupyter · D3 · Git / GitHub · Quarto
+Sydney, Australia · January 2023 - June 2025
 
-[Browse my work on GitHub ↗](https://github.com/Kaxlow){.btn .btn-primary}
+- Managed customer escalations on product issues significantly impeding operations, identifying pain points and priorities and offering targeted steps to restore functionality while aligning stakeholder expectations, contributing to a customer renewal rate of more than 90% in 2023 and 2024.
+- Coached approximately 12 junior customer support engineers over two years on handling technical support cases by explaining product and technical concepts and advising on case progression, with at least three becoming subject-matter experts in their own right.
+- Diagnosed and resolved roughly 10 production incidents per month on Alteryx Server by analyzing system logs and network infrastructure, restoring service availability and applying root-cause fixes while meeting expected response and resolution times in more than 90% of instances.
+- Identified gaps in a customer-facing product upgrade utility, then tested and published an updated version, helping more than 200 enterprise customers plan for a successful product upgrade.
+
+### Alteryx - Customer Support Engineer
+
+Singapore · July 2021 - December 2022
+
+- Debugged end-to-end data pipelines, including SQL-based database connections, REST API integrations, and transformation logic, to restore pipeline integrity and data flow for production environments, closing about 40 support tickets monthly and achieving a customer satisfaction rate of more than 90%.
+- Educated clients on Alteryx Server's capabilities in publishing, sharing, and automating workflows, enabling intra-organizational collaboration on data transformation and analysis workflows running up to once every 10 minutes.
+- Wrote and edited more than 50 how-to and break-fix articles in 2022, along with product documentation and a technical enablement course, enabling external users to resolve common issues independently and deflecting support cases.
+
+### Alteryx - Senior Technical Fulfillment Associate
+
+Singapore · January 2021 - June 2021
+
+- Onboarded new team members by leading walkthroughs of license fulfillment and support processes, enabling them to work independently within one month.
+- Established subject-matter expertise in Alteryx License Server for the Asia-Pacific region by conducting independent research over one month, becoming the regional resource for customer and colleague support on License Server issues.
+
+### Alteryx - Technical Fulfillment Associate
+
+Singapore · June 2019 - December 2020
+
+- Resolved licensing issues for customers and internal stakeholders via email and phone, achieving a one-day turnaround for more than 70% of cases.
+- Developed Alteryx workflows using Python and REST APIs to automate license generation, delivery, and deactivation, eliminating manual predecessors and reducing the risk of human error.
+- Prepared and updated case response templates and licensing system process documentation, enabling team members to work through any case scenario or process in 20 minutes or less.

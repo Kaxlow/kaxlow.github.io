@@ -1,5 +1,5 @@
 ---
-title: "Hi, I’m Kenneth."
+title: "Hi, I’m Kenneth (Ken)."
 subtitle: "Data scientist. Curious human. Occasional dungeon master."
 toc: false
 ---
@@ -24,7 +24,7 @@ The rest of the character sheet
 - **At the table:** running Dungeons & Dragons, where the plan rarely survives contact with the party.
 - **On the trail:** hiking and making room for a different kind of perspective.
 - **With a guitar:** working through a part, one repetition at a time.
-- **In the kitchen:** experimenting with something new—and getting a much faster result than a research project.
+- **In the kitchen:** experimenting with something new — and getting a much faster result than a research project.
 
 Different ways to spend an afternoon. Plenty of reasons to stay curious.
 :::

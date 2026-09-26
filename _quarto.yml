@@ -9,7 +9,7 @@ website:
   site-url: https://kennethlow.com
   description: "Kenneth Low’s data science portfolio: climate, migration, and machine learning."
   page-footer:
-    left: "Kenneth Low · Data science & a healthy sense of curiosity"
+    left: "Kenneth Low"
     right:
       - text: Privacy
         href: privacy.qmd
