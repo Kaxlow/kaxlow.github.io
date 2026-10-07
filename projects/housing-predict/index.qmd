@@ -1,0 +1,66 @@
+---
+title: "The Geography of Home"
+subtitle: "How much can county characteristics explain U.S. home values?"
+description: "An end-to-end housing data science study: audited DuckDB marts, county-level models, fixed effects, geographic validation, and an interactive U.S. county atlas."
+---
+
+::: {.project-intro}
+Behind every housing market is a place: its incomes, its people, and its housing stock. This study tests how much those characteristics tell us about county median home values, then separates differences between counties from changes within them.
+
+[Explore the interactive study ↗](/housing-predict/){.btn .btn-primary}
+[Download the full report](/housing-predict/downloads/REPORT.md){.btn .btn-outline-primary}
+:::
+
+## The question
+
+Can county characteristics explain differences in housing values, and do those relationships generalize across places and time?
+
+The outcome is the Census ACS **median value of owner-occupied housing**, expressed in constant 2024 dollars. It measures county-level survey estimates, not transaction prices or individual-home appraisals.
+
+## From data engineering to modeling
+
+Census ACS characteristics, FEMA disaster declarations, NOAA storm events and NCEI climate records are cleaned and organized in DuckDB marts. The study audits keys, missingness, variable definitions and geographic changes before fitting models.
+
+The main panel uses **9,420 county-period observations** from three non-overlapping ACS windows: 2010–2014, 2015–2019 and 2020–2024. Its **57 primary predictors** exclude previous home values and price-derived ratios. Climate and affordability are separate sensitivity analyses.
+
+## What the models found
+
+The full run completed **October 6, 2026** compares Elastic Net, Extra Trees and histogram gradient boosting. Parameters and model family are selected using 2014-to-2019 validation, then refitted on both periods before evaluating 2024.
+
+- **Selected model:** histogram gradient boosting, chosen by validation RMSLE.
+- **Held-out 2024 performance:** R² **0.801**, with **$37,198 mean absolute error** across **3,139 counties**.
+- **Baseline comparison:** RMSLE is **63.5% lower** than predicting the training-set median.
+- **Feature-group comparison:** removing economic features raises RMSLE by **24.6%**, the largest deterioration among the groups tested.
+
+These predictions use characteristics from the same ACS period as the target. They demonstrate transferable predictive associations, not an advance forecast.
+
+## Two additional tests
+
+**Within-county associations.** A regression with county and period fixed effects uses 3,121 balanced, complete counties. Income and educational attainment are positively associated with values; vacancy is negatively associated. The within R² is 0.132, which has a different denominator from the cross-county benchmark. Confidence intervals use county-clustered standard errors.
+
+**Next-release forecasting.** An annual retrospective experiment compares previous value, learned price history, and history plus county characteristics. Adding characteristics improves 2023–2024 RMSLE by **2.8%** relative to history alone. Adjacent ACS releases overlap four survey years, so historical values already supply a strong baseline.
+
+## What you can explore
+
+- A searchable county map showing observed values or model errors using official 2024 boundaries.
+- County profiles with model estimates, income, education, vacancy and period values.
+- Model and feature-group comparisons, fixed-effects estimates and forecasting results.
+- Downloadable predictions, feature definitions, coverage audits and reproduction instructions.
+
+::: {.callout-note}
+## Boundaries of the evidence
+
+The study is observational and does not identify causal effects. Geography changes are screened conservatively rather than reconciled through an areal crosswalk. ACS sampling margins of error and spatially clustered uncertainty are not modeled. Climate coverage is incomplete, and event absences are assumed zero in the source marts. Release-year labels are not publication dates; the 2024 ACS five-year data were released in January 2026.
+:::
+
+## Reproducibility
+
+Preprocessing is fitted inside training folds. Separate geographic validation holds out entire counties and repeats tuning inside each fold. The workflow exports its data audit, feature manifest, model selection, predictions and diagnostics; automated checks test temporal alignment, geographic separation and fixed-effects calculations.
+
+- [Interactive study](/housing-predict/)
+- [Methods and reproduction instructions](/housing-predict/downloads/METHODS.md)
+- [Full results report](/housing-predict/downloads/REPORT.md)
+- [Model comparison CSV](/housing-predict/downloads/test_metrics.csv)
+- [County prediction CSV](/housing-predict/downloads/test_predictions.csv)
+
+[Back to all projects →](../index.qmd){.text-link}
