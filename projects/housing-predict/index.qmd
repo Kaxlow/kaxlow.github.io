@@ -53,6 +53,16 @@ These predictions use characteristics from the same ACS period as the target. Th
 The study is observational and does not identify causal effects. Geography changes are screened conservatively rather than reconciled through an areal crosswalk. ACS sampling margins of error and spatially clustered uncertainty are not modeled. Climate coverage is incomplete, and event absences are assumed zero in the source marts. Release-year labels are not publication dates; the 2024 ACS five-year data were released in January 2026.
 :::
 
+## Explore the analysis
+
+Follow the code and evidence in three executed notebooks on GitHub. Each documents the completed study and includes saved outputs; a compact evidence snapshot supports running the walkthroughs without the original database.
+
+- [Modeling dataset](https://github.com/Kaxlow/housing-predict/blob/main/notebooks/03_modeling/01_modeling_dataset.ipynb) — Feature engineering, data audits and inclusion rules.
+- [Training and validation](https://github.com/Kaxlow/housing-predict/blob/main/notebooks/03_modeling/02_training_and_validation.ipynb) — Training-only preprocessing, model comparison and county-grouped folds.
+- [Evaluation and interpretation](https://github.com/Kaxlow/housing-predict/blob/main/notebooks/03_modeling/03_evaluation_and_interpretation.ipynb) — Held-out errors, feature groups and supported associations.
+
+[View the repository and reproduction guide](https://github.com/Kaxlow/housing-predict)
+
 ## Reproducibility
 
 Preprocessing is fitted inside training folds. Separate geographic validation holds out entire counties and repeats tuning inside each fold. The workflow exports its data audit, feature manifest, model selection, predictions and diagnostics; automated checks test temporal alignment, geographic separation and fixed-effects calculations.
