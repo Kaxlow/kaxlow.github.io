@@ -16,6 +16,7 @@ toc: false
 <aside class="field-card" aria-label="The questions behind my work">
 <div class="contour-art" aria-hidden="true"><span>KL / FIELD NOTES</span><svg viewBox="0 0 400 240" fill="none"><g stroke="currentColor" stroke-width="1.3"><path d="M-30 180C70 280 100 40 220 110S360 270 440 90"/><path d="M-30 160C70 260 100 20 220 90S360 250 440 70"/><path d="M-30 140C70 240 100 0 220 70S360 230 440 50"/><path d="M-30 120C70 220 100-20 220 50S360 210 440 30"/><path d="M-30 100C70 200 100-40 220 30S360 190 440 10"/><path d="M-30 200C70 300 100 60 220 130S360 290 440 110"/><path d="M-30 220C70 320 100 80 220 150S360 310 440 130"/></g><circle cx="207" cy="86" r="6" fill="currentColor"/></svg></div>
 <p class="eyebrow">Currently investigating</p><ol class="question-list"><li><span>01</span>How does climate risk meet the housing market?</li><li><span>02</span>What’s associated with where people move?</li><li><span>03</span>When does a more complex model earn its keep?</li></ol>
+</aside>
 </section>
 <section class="section-heading"><p class="eyebrow">Selected work / 01—04</p><h2>Questions worth digging into.</h2><p>Reproducible pipelines + Grounded methods = Meaningful research</p></section>
 ```
