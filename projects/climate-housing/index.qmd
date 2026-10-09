@@ -1,6 +1,5 @@
 ---
-title: "Climate risk & housing"
-subtitle: "Are climate risks priced into housing markets?"
+title: "Are Climate Risks Priced Into Housing Markets?"
 description: "A county-level exploration of climate risk, housing-market performance, and extreme weather events using Python, DuckDB, and D3."
 ---
 
@@ -53,4 +52,4 @@ It connects the engineering work behind an analysis with the experience of explo
 - [Detailed methodology and limitations](https://github.com/Kaxlow/climate-on-housing/blob/main/docs/climate-risk-housing-methodology.md)
 - [Publication notebooks](https://github.com/Kaxlow/climate-on-housing/tree/main/notebooks)
 
-[Next: Patterns of U.S. migration →](../us-migration/index.qmd){.text-link}
+[Next: Do county characteristics explain migration flows? →](../us-migration/index.qmd){.text-link}

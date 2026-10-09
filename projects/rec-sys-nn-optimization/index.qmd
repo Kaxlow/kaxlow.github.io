@@ -1,6 +1,5 @@
 ---
-title: "Neural recommender systems"
-subtitle: "When does a more complex model earn its keep?"
+title: "A Comparison of Neural Recommender System Architectures"
 description: "An independent study of neural recommender architectures, hyperparameter search, and optimization under a common computational budget."
 ---
 

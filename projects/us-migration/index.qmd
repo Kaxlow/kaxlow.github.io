@@ -1,6 +1,5 @@
 ---
-title: "Patterns of U.S. migration"
-subtitle: "Do county characteristics explain migration flows?"
+title: "Do county characteristics explain migration flows?"
 description: "Exploring U.S. migration through county characteristics, public-data cleaning, interactive maps, and reproducible exploratory analysis."
 ---
 
@@ -56,4 +55,4 @@ The map is the visible part. The less visible work—preserving raw data, resolv
 - [Methodology](https://github.com/Kaxlow/us-migration/blob/main/docs/methodology.md)
 - [Executed notebooks](https://github.com/Kaxlow/us-migration/tree/main/notebooks)
 
-[Next: Neural recommender systems →](../rec-sys-nn-optimization/index.qmd){.text-link}
+[Next: A Comparison of Neural Recommender System Architectures →](../rec-sys-nn-optimization/index.qmd){.text-link}

@@ -1,6 +1,5 @@
 ---
 title: "A Dissection of Home Values"
-subtitle: "How much can county characteristics explain U.S. home values?"
 description: "An end-to-end housing data science study: audited DuckDB marts, county-level models, fixed effects, geographic validation, and an interactive U.S. county atlas."
 ---
 
