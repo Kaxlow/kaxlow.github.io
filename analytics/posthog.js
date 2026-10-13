@@ -30,34 +30,36 @@
     try { const url = new URL(value, location.href); return url.origin + url.pathname; }
     catch (_) { return ''; }
   };
-  window.posthog.init(PROJECT_TOKEN, {
-    api_host: API_HOST,
-    defaults: '2026-05-30',
-    person_profiles: 'identified_only',
-    persistence: 'localStorage+cookie',
-    cross_subdomain_cookie: true,
-    secure_cookie: true,
-    respect_dnt: true,
-    autocapture: true,
-    capture_pageview: 'history_change',
-    capture_pageleave: true,
-    capture_dead_clicks: true,
-    capture_heatmaps: true,
-    capture_performance: { web_vitals: true, network_timing: true },
-    capture_exceptions: { capture_unhandled_errors: true, capture_unhandled_rejections: true, capture_console_errors: true },
-    disable_session_recording: false,
-    enable_recording_console_log: true,
-    session_recording: { maskAllInputs: true, maskTextSelector: '.ph-mask', blockSelector: '.ph-no-capture', recordHeaders: false, recordBody: false },
-    before_send(event) {
-      if (!event) return event;
-      event.properties.site = site;
-      event.properties.environment = 'production';
-      for (const key of ['$current_url', '$referrer', '$initial_current_url', '$initial_referrer']) {
-        if (event.properties[key]) event.properties[key] = cleanUrl(event.properties[key]);
+  if (localStorage.getItem("exclude_posthog") !== "true") {
+    window.posthog.init(PROJECT_TOKEN, {
+      api_host: API_HOST,
+      defaults: '2026-05-30',
+      person_profiles: 'identified_only',
+      persistence: 'localStorage+cookie',
+      cross_subdomain_cookie: true,
+      secure_cookie: true,
+      respect_dnt: true,
+      autocapture: true,
+      capture_pageview: 'history_change',
+      capture_pageleave: true,
+      capture_dead_clicks: true,
+      capture_heatmaps: true,
+      capture_performance: { web_vitals: true, network_timing: true },
+      capture_exceptions: { capture_unhandled_errors: true, capture_unhandled_rejections: true, capture_console_errors: true },
+      disable_session_recording: false,
+      enable_recording_console_log: true,
+      session_recording: { maskAllInputs: true, maskTextSelector: '.ph-mask', blockSelector: '.ph-no-capture', recordHeaders: false, recordBody: false },
+      before_send(event) {
+        if (!event) return event;
+        event.properties.site = site;
+        event.properties.environment = 'production';
+        for (const key of ['$current_url', '$referrer', '$initial_current_url', '$initial_referrer']) {
+          if (event.properties[key]) event.properties[key] = cleanUrl(event.properties[key]);
+        }
+        return event;
       }
-      return event;
-    }
-  });
+    });
+  }
 
   document.addEventListener('click', event => {
     const link = event.target.closest?.('a[href]');
