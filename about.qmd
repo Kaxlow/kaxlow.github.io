@@ -1,16 +1,16 @@
 ---
-title: "Hi, I’m Kenneth (Ken)."
-subtitle: "Data scientist. Curious human. Occasional dungeon master."
+title: "Hi, I’m Ken."
+subtitle: "Data science by day. D&D by night."
 toc: false
 ---
 
 I’m currently completing an M.S. in Data Science at the University of Colorado Boulder. Before moving into data science, I spent several years working with enterprise software and solving complex technical problems.
 
-That background shows up in my projects: there’s the question I want to answer, and then there’s the work of making the data and tools reliable enough to answer it. I’m interested in both.
+That background shows up in my projects: there’s the question I want to answer, and then there’s the work of making the data and tools reliable enough to answer it.
 
 ## The questions I keep coming back to
 
-How do places change? What shapes the way people move through them? And when we build models of those systems, how do we know the extra complexity is helping?
+How are spaces structured, and how do they change? What shapes people's relations to these spaces? Which models best capture these dynamics?
 
 My current projects explore [climate risk and housing](projects/climate-housing/index.qmd), [U.S. migration](projects/us-migration/index.qmd), and [neural recommender systems](projects/rec-sys-nn-optimization/index.qmd). They range from public-data pipelines and interactive maps to controlled machine-learning experiments.
 
@@ -26,7 +26,6 @@ The rest of the character sheet
 - **With a guitar:** working through a part, one repetition at a time.
 - **In the kitchen:** experimenting with something new — and getting a much faster result than a research project.
 
-Different ways to spend an afternoon. Plenty of reasons to stay curious.
 :::
 
 ## Follow the work

@@ -4,7 +4,7 @@ description: "A county-level exploration of climate risk, housing-market perform
 ---
 
 ::: {.project-intro}
-Housing is local. So is exposure to extreme weather. This project brings those two stories together, exploring how U.S. county housing markets relate to climate risk and how their trajectories look around major events.
+Housing is local. So is exposure to extreme weather. This project explores how U.S. county housing markets relate to climate risk and what it means for homeowners.
 
 [Explore the interactive story ↗](https://kennethlow.com/climate-on-housing/output/climate-risk-housing.html){.btn .btn-primary}
 [View code on GitHub ↗](https://github.com/Kaxlow/climate-on-housing){.btn .btn-outline-primary}
@@ -18,32 +18,26 @@ The project focuses on Redfin’s median sale price per square foot, measured as
 
 ## From scattered sources to a shared geography
 
-The pipeline combines Redfin housing data, FEMA risk ratings and disaster declarations, NOAA storm events, NCEI weather, Census ACS characteristics, and StatsAmerica economic data. Five-character county FIPS codes connect the sources.
+The pipeline combines Redfin housing data, FEMA risk ratings and disaster declarations, NOAA storm events, NCEI weather, Census ACS characteristics, and StatsAmerica economic data.
 
-Python handles acquisition and preparation. DuckDB separates raw records, normalized tables, domain features, and event-window analysis. Source metadata and file hashes make it possible to trace inputs through the pipeline.
+Python handles data acquisition and preparation. DuckDB separates raw records, normalized tables, domain features, and event-window analysis. Source metadata and file hashes make it possible to trace inputs through the pipeline.
 
 ## What I built
 
 - **A layered analytical database:** raw records remain separate from the tables used for comparisons and publication.
 - **Event-window analysis:** housing observations are aligned before event start and after event end, with distinct three- and five-year post-event views.
-- **An interactive story:** county geography, housing histories, risk-group comparisons, and a Climate Playbook are published as a static D3 experience.
+- **An interactive web-based story:** county geography, housing histories, risk-group comparisons, and a Climate Playbook are published as a static D3 experience served through a web interface.
 - **Supporting notebooks and methodology:** quality checks, feature exploration, and event diagnostics sit alongside the final story.
 
-## Explore the evidence
+## The story: Housing from a climate risk perspective
 
-Start with county housing histories, compare FEMA risk groups, then examine the event-relative views. The feature analysis asks which economic and demographic characteristics accompany stronger or weaker housing growth within the same risk group.
-
-These views answer different questions and can use different cohorts. The grouped event charts require complete observations across their displayed windows; a five-year view can therefore contain fewer trajectories than a three-year view.
+Starting with a view of county-level median housing price growth over time, a climate perspective is then added by grouping counties based on FEMA risk ratings and observing how each group's growth trajectory differs. Next, growth trajectories are examined around the time of extreme climate events. In an attempt to explain county variation within NRI risk groups, the analysis looks at the relationhips between counties' economic and demographic characteristics and their housing price growth.
 
 ::: {.callout-note}
-## What this analysis does not establish
+## Note
 
-The comparisons describe associations, not causal effects of climate risk on prices. County summaries hide neighborhood differences; event windows may overlap; and today’s FEMA risk snapshot is applied to historical periods. The Climate Playbook’s combined score is a rule-based presentation heuristic, not a validated prediction or calibrated risk estimate.
+The comparisons describe associations, not causal effects of climate risk on prices.
 :::
-
-## Why this project belongs here
-
-It connects the engineering work behind an analysis with the experience of exploring it. The database, geography, cohort definitions, and storytelling all have to agree for the final page to be useful.
 
 ## Explore further
 
