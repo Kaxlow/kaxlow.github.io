@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-subtitle: "Questions first. Data, methods, and a story to follow."
+subtitle: "Questions -> Data -> Methods -> Story"
 page-layout: full
 toc: false
 ---
