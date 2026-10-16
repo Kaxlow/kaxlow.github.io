@@ -2,7 +2,9 @@
 title: "Privacy & analytics"
 ---
 
-This portfolio and its climate and migration project websites use PostHog to understand which pages and features are useful and to diagnose errors. Once enabled, analytics includes page visits, clicks, scrolling, browser performance, browser errors, console logs, and session replay of page interactions.
+This portfolio and its climate, housing prediction, and migration project websites use PostHog to understand which pages and features are useful and to diagnose errors. Once enabled, analytics includes page visits, clicks, scrolling, browser performance, browser errors, console logs, and session replay of page interactions.
+
+The portfolio (except the migration case study), Climate Risk to Housing, and Housing Prediction also measure section engagement. Active time counts foreground viewing and pauses after 60 seconds without interaction. Climate tracking records individual help-icon clicks, Playbook navigation, selected county names and FIPS codes, selection methods, and clicks on feedback, privacy, and resource links. These custom events omit typed county searches and location coordinates. The migration website and its case study retain their existing tracking.
 
 Session replay masks form input values. Network request and response bodies and headers are not recorded. Please avoid entering personal or sensitive information in these public project tools. Browser analytics cannot capture every issue, particularly when tracking is blocked or a page cannot load.
 

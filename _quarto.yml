@@ -1,8 +1,12 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "**/*.qmd"
+    - "housing-predict/downloads/*.md"
   resources:
     - analytics/posthog.js
+    - analytics/behavior.js
     - housing-predict/**
 
 website:
@@ -37,3 +41,6 @@ format:
     css: portfolio.css
     toc: true
     include-in-header: analytics/head.html
+
+filters:
+  - analytics/include-behavior.lua
