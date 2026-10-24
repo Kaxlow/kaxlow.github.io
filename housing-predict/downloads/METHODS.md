@@ -14,9 +14,8 @@ python -m unittest discover -s tests -v
 ```
 
 Optional arguments are `--database PATH`, `--output-dir PATH`, and `--quick`.
-Quick mode uses fewer candidates and one annual forecast validation year; its
-outputs go into a `quick/` subdirectory. Full mode uses six characteristics
-candidates and all five annual forecast validation years. Neither mode changes
+Quick mode uses fewer candidates; its outputs go into a `quick/` subdirectory.
+Full mode uses six characteristics candidates. Neither mode changes
 the source DuckDB marts. Model artifacts are trusted local pickle files; load
 only files you generated yourself.
 
@@ -77,7 +76,9 @@ and Virginia codes. This conservatively excludes name/code-only changes too;
 no approximate crosswalk is invented. `geography_audit.csv` reports eligibility.
 This is a substantial-change screen, not proof that all retained boundaries are
 identical. Minor boundary changes and ACS sampling margins of error are not
-modeled. The forecast sensitivity also requires continuous 2010–2024 histories.
+modeled.
+
+Annual home-value forecasting is outside this study's scope. Consecutive ACS five-year releases share four survey years, so predicting the next release targets an updated period estimate. This study focuses on relationships across non-overlapping periods and within counties.
 
 ## Experiments and selection
 
@@ -99,13 +100,6 @@ modeled. The forecast sensitivity also requires continuous 2010–2024 histories
    size. County-clustered covariance accounts for absorbed effects in its degrees
    of freedom; confidence intervals use a t distribution with counties minus one
    degrees of freedom. No time-invariant geography coefficients are estimated.
-4. **Retrospective annual forecasting.** Compare previous value with a learned
-   price-history-only model and history plus characteristics. Independently tune
-   each learned design on expanding 2018–2022 validation folds, fit through 2022,
-   and evaluate 2023–2024 using each row's observed prior-year features. This is
-   a sequence of one-release-ahead predictions with fixed fitted parameters,
-   not a two-step recursive forecast. It uses equal comparison rows. Adjacent
-   ACS windows overlap and release/CPI vintages are not reconstructed.
 
 The candidate grid reuses the existing Elastic Net, Extra Trees and histogram
 gradient boosting implementations. `selection.json` records parameters;
@@ -143,7 +137,7 @@ that bin; these remain model associations, not interventions.
 characteristics, 2024 predictions and residuals; missing values are JSON null.
 Join to matching-period geometry for a county map. `summary.json` includes
 provenance and limitations. The report follows the presentation's question,
-data journey, evidence, interpretation, forecasting and limitations sequence.
+data journey, evidence, interpretation and limitations sequence.
 
 ## Source guidance
 

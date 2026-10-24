@@ -37,13 +37,15 @@ These predictions use characteristics from the same ACS period as the target. Th
 
 **Within-county associations.** A regression with county and period fixed effects uses 3,121 balanced, complete counties. Income and educational attainment are positively associated with values; vacancy is negatively associated. The within R² is 0.132, which has a different denominator from the cross-county benchmark. Confidence intervals use county-clustered standard errors.
 
-**Next-release forecasting.** An annual retrospective experiment compares previous value, learned price history, and history plus county characteristics. Adding characteristics improves 2023–2024 RMSLE by **2.8%** relative to history alone. Adjacent ACS releases overlap four survey years, so historical values already supply a strong baseline.
+**Climate and affordability measures.** Separate comparisons ask whether climate measures or housing affordability and mortgage measures add predictive information beyond the primary characteristics. Each comparison uses the same counties for the primary and expanded models; climate coverage defines a smaller eligible sample.
+
+Annual home-value forecasting is outside this study's scope. Consecutive ACS five-year releases share four survey years, so predicting the next release targets an updated period estimate. This study focuses on relationships across non-overlapping periods and within counties.
 
 ## What you can explore
 
 - A searchable county map showing observed values or model errors using official 2024 boundaries.
 - County profiles with model estimates, income, education, vacancy and period values.
-- Model and feature-group comparisons, fixed-effects estimates and forecasting results.
+- Model and feature-group comparisons, fixed-effects estimates and climate/affordability comparisons.
 - Downloadable predictions, feature definitions, coverage audits and reproduction instructions.
 
 ::: {.callout-note}

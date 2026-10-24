@@ -6,6 +6,8 @@ The validation-selected model (hist_direct_2) explains 80.1% of the held-out 202
 
 These are out-of-period predictions using characteristics measured in the same ACS window as the outcome. They establish predictive association, not causation or advance forecasting.
 
+Annual home-value forecasting is outside this study's scope. Consecutive ACS five-year releases share four survey years, so predicting the next release targets an updated period estimate. This study focuses on relationships across non-overlapping periods and within counties.
+
 ## Data journey
 
 Existing Census, FEMA, NOAA and climate inputs feed DuckDB marts, then an audited panel of 9,420 county-period observations and 57 primary predictors. The periods are 2010–2014, 2015–2019 and 2020–2024; values are in 2024 dollars. The target is median owner-occupied home value, not transaction price.
@@ -53,16 +55,6 @@ The fixed-effects regression uses 3,121 balanced, complete counties. It controls
 
 A percentage predictor is measured in percentage points; log income is in log1p dollars. Cross-county relationships need not have the same sign as within-county changes. See associations_by_period.csv, coefficient_stability.csv and group_permutation.csv for stability diagnostics.
 
-## What characteristics add to forecasting
-
-Adding characteristics changes held-out RMSLE by 2.8% relative to the history-only model (positive means improvement). This separate experiment predicts the next overlapping ACS estimate.
-
-| Design | 2023–2024 MAE | RMSLE |
-|---|---:|---:|
-| previous_value | $10,955 | 0.067 |
-| history_only | $7,719 | 0.056 |
-| history_plus_characteristics | $7,538 | 0.055 |
-
 ## Website handoff
 
 website_data/counties.json contains FIPS, observed period values, selected characteristics, predictions and residuals. Join it to matching-vintage county boundaries when implementing the county map; geometry is not bundled. The other JSON files support model comparisons, error charts, association plots and response curves. Host these static results; do not train in the browser.
@@ -74,7 +66,6 @@ website_data/counties.json contains FIPS, observed period values, selected chara
 - Geographic folds are county-disjoint but neighboring counties can remain correlated.
 - Fixed-effects sample excludes known changes and incomplete histories; no areal crosswalk.
 - Minor boundary changes and ACS margins of error are not modeled.
-- Annual forecast labels overlap four ACS survey years; release vintages are not reconstructed.
 - 2024 ACS five-year estimates were released January 29, 2026; no operational end-2024 forecast claim.
 - Hazard absence is assumed zero in event marts; reporting and mapping gaps may remain.
 - Metro labels come from a static reference and are used only for error breakdowns.

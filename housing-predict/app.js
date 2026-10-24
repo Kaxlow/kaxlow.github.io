@@ -4,7 +4,7 @@ const money = (value) => value == null ? 'Not available' : new Intl.NumberFormat
 const compact = (value) => '$' + (value / 1000).toFixed(value >= 100000 ? 0 : 1) + 'k';
 const escapeHTML = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const target = 'target_median_owner_occupied_home_value_2024_usd';
-const names = {training_median:'Training-median baseline',hist_direct_2:'Gradient boosting',extra_trees_1:'Extra Trees',elastic_net_2:'Elastic Net',previous_value:'Previous home value',history_only:'Price history only',history_plus_characteristics:'History + characteristics'};
+const names = {training_median:'Training-median baseline',hist_direct_2:'Gradient boosting',extra_trees_1:'Extra Trees',elastic_net_2:'Elastic Net'};
 let counties = [], current = [], byFips = new Map(), measure = 'value', selected = null;
 const valueColors = ['#e5e9ca','#c4d2a5','#92b183','#5f9271','#346b55','#163f36'];
 const errorColors = ['#9b572f','#c68c5b','#e5c6a1','#dadfc9','#85a595','#356655'];
@@ -59,7 +59,7 @@ function showCounty(fips) {
 }
 async function initialize() {
   try {
-    const [data, paths, metrics, groups, forecast, fe] = await Promise.all(['counties','county_paths','test_metrics','feature_group_experiments','forecast_metrics','fixed_effects'].map(read));
+    const [data, paths, metrics, groups, fe] = await Promise.all(['counties','county_paths','test_metrics','feature_group_experiments','fixed_effects'].map(read));
     counties=data;
     current=data.filter(r=>r.year===2024).sort((a,b)=>a.county_name.localeCompare(b.county_name));
     byFips=new Map(current.map(r=>[r.county_fips,r]));
@@ -90,8 +90,6 @@ async function initialize() {
     const labels={economic:'Economic',social:'Social & demographic',housing:'Housing structure',hazards:'Hazards'};
     const groupRows=groups.filter(r=>r.experiment.startsWith('without_')).map(r=>({label:labels[r.experiment.replace('without_','')],value:100*(r.rmsle/base-1)})).sort((a,b)=>b.value-a.value);
     barChart('#group-bars',groupRows,Math.max(...groupRows.map(r=>r.value)),v=>'+'+v.toFixed(1)+'%');
-    const forecastRows=forecast.filter(r=>r.year==='all').map(r=>({label:names[r.design],value:r.mae_2024_usd,selected:r.design==='history_plus_characteristics'}));
-    barChart('#forecast-bars',forecastRows,Math.max(...forecastRows.map(r=>r.value)),money);
     const feLabels=['Log household income','Bachelor’s attainment','Vacancy share','Detached homes','Commute minutes','Household size'];
     $('#fe-table').innerHTML=`<table><thead><tr><th>Predictor</th><th>Coefficient</th><th>95% interval</th></tr></thead><tbody>${fe.map((r,i)=>`<tr><td>${feLabels[i]}</td><td>${r.coefficient.toFixed(4)}</td><td>${r.ci_low.toFixed(4)} to ${r.ci_high.toFixed(4)}</td></tr>`).join('')}</tbody></table>`;
   } catch(error) {
